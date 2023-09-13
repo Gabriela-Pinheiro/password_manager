@@ -31,6 +31,7 @@ def populate_password():
 
 # ---------------------------- SEARCH PASSWORD ------------------------------- #
 def search():
+    """Look through json file and find 'Website' entry"""
     searched = (website_entry.get()).capitalize()
     try:
         with open("users_manager.json") as file:  # FileNotFound handler
@@ -43,7 +44,7 @@ def search():
         if searched in data:
             messagebox.showinfo(title=searched, message=f"Email: {data[searched]['email']}\nPassword: {data[searched]['password']}")
         else:
-                    messagebox.showinfo(title="Error", message=f"No {searched.upper()} credential found!\nTry and ADD it instead.")
+            messagebox.showinfo(title="Error", message=f"No {searched.upper()} credential found!\nTry and ADD it instead.")
 
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
